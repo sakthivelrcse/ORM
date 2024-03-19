@@ -6,7 +6,8 @@ To develop a Django application to store and retrieve data from a railway databa
 
 ## Entity Relationship Diagram
 
-![erp diagram](https://github.com/sakthivelrcse/ORM/assets/116993934/629b0600-7c1e-413d-8c54-21826c13c99a)
+![erp diagram ](https://github.com/sakthivelrcse/ORM/assets/116993934/bf47f13e-e7b3-4d29-93b0-356a92799083)
+
 
 
 ## DESIGN STEPS
@@ -36,7 +37,7 @@ models.py
 from django.db import models
 from django.contrib import admin
 class railway (models.Model):
-    train_code=models.CharField(max_length=20,help_text="railway train_code")
+    train_code=models.CharField(max_length=20,help_text="railway train_code")(primary_key=True)
     train_name=models.CharField(max_length=100)
     start_time=models.IntegerField()
     End_time=models.IntegerField()
@@ -49,8 +50,7 @@ class railwayAdmin(admin.ModelAdmin):
 ```
 ## OUTPUT
 
-![Screenshot 2024-03-13 155527](https://github.com/sakthivelrcse/ORM/assets/116993934/7cc564d4-a90d-445e-9c87-26234f4658cb)
-
+![Screenshot 2024-03-15 091508](https://github.com/sakthivelrcse/ORM/assets/116993934/4e806555-2430-4ab7-a99e-2da516ce89af)
 
 
 ## RESULT
