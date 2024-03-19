@@ -25,28 +25,31 @@ Execute Django admin and create details for 10 records
 
 ## PROGRAM
 ```
-model.py
-
-from django.db import models
-from django.contrib import admin
-class Railway_db(models.Model):
-    trainno=models.IntegerField(primary_key=True);
-    trainname=models.CharField(max_length=20);
-    departure=models.CharField(max_length=50);
-    arrival=models.CharField(max_length=50);
-    distance=models.IntegerField();
-class Railway_dbAdmin(admin.ModelAdmin):
-    list_display=("trainno","trainname","departure","arrival","distance");
-
 admin.py
 
 from django.contrib import admin
-from .models import Railway_db,Railway_dbAdmin
-admin.site.register(Railway_db,Railway_dbAdmin
+from .models import railway,railwayAdmin
+admin.site.register(railway,railwayAdmin)
+
+models.py
+
+from django.db import models
+from django.contrib import admin
+class railway (models.Model):
+    train_code=models.CharField(max_length=20,help_text="railway train_code")
+    train_name=models.CharField(max_length=100)
+    start_time=models.IntegerField()
+    End_time=models.IntegerField()
+    start_station_code=models.IntegerField()
+    end_station_code=models.IntegerField()
+    
+ 
+class railwayAdmin(admin.ModelAdmin):
+    list_display=('train_code','train_name','start_time','End_time','start_station_code','end_station_code',)
 ```
 ## OUTPUT
 
-![2 exp output](https://github.com/sakthivelrcse/ORM/assets/116993934/ef6a3a36-c277-42b2-a5de-ef277192c8d7)
+![Screenshot 2024-03-13 155527](https://github.com/sakthivelrcse/ORM/assets/116993934/7cc564d4-a90d-445e-9c87-26234f4658cb)
 
 
 
